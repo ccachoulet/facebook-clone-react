@@ -1,10 +1,10 @@
 import React from 'react';
 import Story from './Story';
-import './StoryReel.css'
+import './StoryReel.css';
 
 function StoryReel() {
   return (
-    <div class="storyreel">
+    <div class="storyReel">
       {/* Story */}
       <Story
       image="https://pbs.twimg.com/media/DfkhrO1XUAEYkdw?format=jpg&name=small"
