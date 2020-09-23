@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Avatar } from '@material-ui/core';
 import VideocamIcon from '@material-ui/icons/Videocam'
 import PhotoLibraryIcon from '@material-ui/icons/PhotoLibrary'
@@ -7,9 +7,17 @@ import './MessageSender.css';
 
 function MessageSender() {
 
+    const [input, setInput] = useState ('');
+    const [imageUrl, setImageUrl] = useState('');
+
     const handleSubmit = e => {
         e.preventDefault();
+        
+        
+        setInput("");
+        setImageUrl("");
     };
+
 
   return (
     <div className="messageSender">
@@ -17,12 +25,17 @@ function MessageSender() {
         <Avatar />
         <form>
             <input 
+            value={input}
+            onChange={e => setInput(e.target.value)}
                 className="messageSender__input"
                 placeholder={`Que voulez-vous dire, Clement ?`}
                 type="text" />
 
 
-            <input placeholder="Image URL (Option)" />
+            <input 
+            value={imageUrl}
+            onChange={e => setImageUrl(e.target.value)}
+            placeholder="Image URL (Option)" />
 
             <button onClick={handleSubmit} type="submit">
                 Publier
